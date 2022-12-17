@@ -2,9 +2,6 @@
 
 create database TestDatabase;
 
-use TestDatabase;
-
-
 create table Subjects 
 (
 	Id int primary key identity(1, 1),
