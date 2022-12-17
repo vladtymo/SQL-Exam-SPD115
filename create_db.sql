@@ -1,7 +1,7 @@
 -- SQL script for creating the Database
 
-create database TestDatabase;
+create database BarberShopDb;
 
-use TestDatabase;
+use BarberShopDb;
 
--- blblabaer ighluaer gfaerug uaerlghliers
+-- create table scripts
