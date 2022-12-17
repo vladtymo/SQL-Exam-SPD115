@@ -1,6 +1,7 @@
 -- SQL script for inserting data to the Database
 
 -- Inserting values to Department and GroupCurators tables
+using University
 
 insert into Departments
 values (8000, 'Graphic Design', 1),
@@ -16,7 +17,7 @@ values (8000, 'Graphic Design', 1),
 	   (8000, 'Computer Support', 5),
 	   (7400, 'Project Management', 6),
 	   (6900, 'Information Security', 6),
-	   (5800, 'Data Management', 6),
+	   (5800, 'Data Management', 6)
 
 -- insert data
 insert into GroupsCurators

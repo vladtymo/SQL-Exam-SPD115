@@ -1,5 +1,9 @@
 -- SQL script for creating the Database
 
+-- Create Departments and GroupCurators tables
+create database University
+using University
+
 -- Departments
 create table Departments
 (    
