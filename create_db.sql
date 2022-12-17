@@ -4,6 +4,12 @@
 create database University
 use University
 
+create table Subjects 
+(
+	Id int primary key identity(1, 1) not null,
+	[Name] nvarchar(100) not null unique check([Name] <> ''),
+);
+
 create table Faculties
 (
 Id int primary key IDENTITY(1,1) NOT NULL,
