@@ -4,6 +4,6 @@ create database TestDatabase;
 
 create table Subjects 
 (
-	Id int primary key identity(1, 1),
+	Id int primary key identity(1, 1) not null,
 	[Name] nvarchar(100) not null unique check([Name] <> ''),
 );
