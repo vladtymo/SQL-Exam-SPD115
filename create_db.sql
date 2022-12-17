@@ -7,7 +7,7 @@ use BarberShopDb;
 create table Faculties
 (
 Id int primary key IDENTITY(1,1) NOT NULL,
-Financing money NOT NULL CHECK(Financing > 0) DEFAULT(0),
+Financing money NOT NULL CHECK(Financing >= 0) DEFAULT(0),
 Name nvarchar(100) NOT NULL CHECK(Name <> '') UNIQUE
 )
 
