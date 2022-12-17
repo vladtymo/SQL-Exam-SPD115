@@ -2,7 +2,22 @@
 
 -- Create Departments and GroupCurators tables
 create database University
-using University
+use University
+
+create table Groups
+(
+	Id int primary key identity(1,1),
+	Name nvarchar(10) not null check(Name <> '') unique,
+	Year int not null check(Year between 1 and 5),
+	DepartmentId int not null references Departments(Id)
+);
+
+create table GroupsLectures
+(
+	Id int primary key identity(1,1),
+	GroupId int not null references Groups(Id),
+	LectureId int not null references Lectures(Id),
+);
 
 -- Departments
 create table Departments
@@ -20,3 +35,4 @@ create table GroupsCurators
    CuratorId int not null references Curators(Id),
    GroupId int not null references Groups(Id)
 );
+
