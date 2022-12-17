@@ -3,5 +3,3 @@
 create database BarberShopDb;
 
 use BarberShopDb;
-
--- create table scripts
