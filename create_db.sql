@@ -11,3 +11,10 @@ create table Groups
 	Year int not null check(Year >= 1 and Year <= 5),
 	DepartmentId int not null references Departments(Id)
 );
+
+create table GroupsLectures
+(
+	Id int primary key identity(1,1),
+	GroupId int not null references Groups(Id),
+	LectureId int not null references Lectures(Id),
+);
