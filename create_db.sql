@@ -1,73 +1,86 @@
 -- SQL script for creating the Database
 
--- Create Departments and GroupCurators tables
-create database University;
-go
-use University;
-go
+-- Create Barbershop table
 
-create table Subjects 
-(
-	Id int primary key identity(1, 1) not null,
-	[Name] nvarchar(100) not null unique check([Name] <> ''),
-);
-go
-create table Faculties
-(
-	Id int primary key IDENTITY(1,1) NOT NULL,
-	Financing money NOT NULL CHECK(Financing >= 0) DEFAULT(0),
-	Name nvarchar(100) NOT NULL CHECK(Name <> '') UNIQUE
-);
-go
-create table Teachers
-(
-	Id int primary key IDENTITY(1,1) NOT NULL,
-	Name nvarchar(max) NOT NULL CHECK(Name <> ''),
-	Salary money NOT NULL CHECK(Salary > 0),
-	Surname nvarchar(max) NOT NULL CHECK(Surname <> '')
-);
-go
-create table Departments
-(    
-   Id int primary key identity(1, 1),
-   Financing money not null default(0) check(Financing >= 0),
-   [Name] nvarchar(100) not null unique check([Name] <> ''),
-   FacultyId int not null references Faculties(Id)
-);
-go
-create table Groups
+create database Barbershop;
+use Barbershop;
+
+-- barbershop services
+create table [Services]
 (
 	Id int primary key identity(1,1),
-	Name nvarchar(10) not null check(Name <> '') unique,
-	Year int not null check(Year between 1 and 5),
-	DepartmentId int not null references Departments(Id)
+	[Name] nvarchar(max) not null check([Name] <> ''),
+	Price money not null default(0) check(Price >= 0),
+	Duration int not null default(0)
 );
-go
-create table Lectures
-(
-   Id int primary key identity(1,1) not null,
-   LectureRoom nvarchar(max) not null check(LectureRoom <> ''),
-   SubjectId int not null references Subjects(Id),
-   TeacherId int not null references Teachers(Id),
-);
-go
-create table GroupsLectures
+
+-- job positions
+create table Positions
 (
 	Id int primary key identity(1,1),
-	GroupId int not null references Groups(Id),
-	LectureId int not null references Lectures(Id),
+	[Name] nvarchar(50) not null check([Name] <> '')
 );
-go
-create Table Curators
+
+-- customer reviews
+create table Reviews
 (
-   Id int primary key identity(1,1) not null,
-   Name nvarchar(max) not null check(Name <> ''),
-   Surname nvarchar(max) not null check(Surname <> '')
-)
-go
-create table GroupsCurators
+	Id int primary key identity(1,1),
+	Mark nvarchar(50) not null check(Mark <> '')
+);
+
+-- customers information
+create table Customers
 (
-   Id int primary key identity(1, 1),
-   CuratorId int not null references Curators(Id),
-   GroupId int not null references Groups(Id)
+	Id int primary key identity(1,1),
+	[Name] nvarchar(max) not null check([Name] <> ''),
+	Surname nvarchar(max) not null check(Surname <> ''),
+	Phone nvarchar(20) not null,
+	Email nvarchar(30) not null,
+	ReviewId int not null references Reviews(Id)
+);
+
+-- barbers information
+create table Barbers
+(
+	Id int primary key identity(1,1),
+	[Name] nvarchar(max) not null check([Name] <> ''),
+	Surname nvarchar(max) not null check(Surname <> ''),
+	Sex nvarchar(10) not null,
+	Phone nvarchar(20) not null,
+	Email nvarchar(50) not null,
+	BirthDate date not null,
+	EmploymentDate date not null,
+	PositionId int not null references Positions(Id)
+);
+
+-- work schedule
+create table Schedule
+(
+	Id int primary key identity(1,1),
+	BarberId int not null references Barbers(Id),
+	[Day] int not null check([Day] >= 1 and  [Day] <= 7),
+	StartTime time not null,
+	EndTime time not null check(EndTime > StartTime)
+);
+
+-- customer feedbacks
+create table Feedbacks
+(
+	Id int primary key identity(1,1),
+	[Text] nvarchar(max) not null check([Text] <> ''),
+	CustomerId int not null references Customers(Id),
+	BarberId int not null references Barbers(Id)
+);
+
+-- recorded visits
+create table Visits
+(
+	Id int primary key identity(1,1),
+	CustomerId int not null references Customers(Id),
+	BarberId int not null references Barbers(Id),
+	ServiceId int not null references [Services](Id),
+	[Date] date not null,
+	Price money not null default(0) check(Price >= 0),
+	FeedbackId int not null references Feedbacks(Id),
+	ReviewId int not null references Reviews(Id)
 );

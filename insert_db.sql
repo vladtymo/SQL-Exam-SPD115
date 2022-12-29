@@ -1,155 +1,70 @@
 -- SQL script for inserting data to the Database
 
-use University;
-go
+use Barbershop;
 
-insert into Subjects (Name) values ( 'Computer Science');
-insert into Subjects (Name) values ('Information Systems');
-insert into Subjects (Name) values ( 'Chemical Engineering');
-insert into Subjects (Name) values ( 'Structural Engineering');
-insert into Subjects (Name) values ( 'Mechanical Engineering');
-insert into Subjects (Name) values ( 'Mathematics');
-insert into Subjects (Name) values ( 'Physics');
-insert into Subjects (Name) values ( 'Physical Education');
-insert into Subjects (Name) values ( 'Biology');
-insert into Subjects (Name) values ('Geography');
-go
+insert into [Services]
+values ('Facial', 20, 2),
+       ('Beard Trim', 16, 2),
+	   ('Mustache Trim', 14, 3),
+	   ('Braiding', 28, 5),
+	   ('Colouring', 20, 6),
+	   ('Shave', 12, 3),
+	   ('Razor Shaving', 17, 4)
 
-insert into Teachers (Name, Salary, Surname) values ('Mallissa', 51, 'Whicher');
-insert into Teachers (Name, Salary, Surname) values ('Eleanora', 31, 'Roderigo');
-insert into Teachers (Name, Salary, Surname) values ('Royce', 51, 'Meffin');
-insert into Teachers (Name, Salary, Surname) values ('Codee', 85, 'Ivanilov');
-insert into Teachers (Name, Salary, Surname) values ('Ethyl', 58, 'Jerzyk');
-insert into Teachers (Name, Salary, Surname) values ('Frannie', 16, 'Damerell');
-insert into Teachers (Name, Salary, Surname) values ('Leonelle', 73, 'Meek');
-insert into Teachers (Name, Salary, Surname) values ('Anica', 14, 'Corry');
-insert into Teachers (Name, Salary, Surname) values ('Mame', 81, 'Mee');
-insert into Teachers (Name, Salary, Surname) values ('Adam', 70, 'Spruce');
-insert into Teachers (Name, Salary, Surname) values ('Ange', 87, 'Diprose');
-insert into Teachers (Name, Salary, Surname) values ('Ivy', 71, 'Leavry');
-insert into Teachers (Name, Salary, Surname) values ('Maurizio', 19, 'MacConchie');
-insert into Teachers (Name, Salary, Surname) values ('Lynnett', 69, 'Sommerville');
-insert into Teachers (Name, Salary, Surname) values ('Pate', 45, 'Purvis');
-insert into Teachers (Name, Salary, Surname) values ('Sari', 11, 'Rallings');
-insert into Teachers (Name, Salary, Surname) values ('Ursala', 58, 'Tejada');
-insert into Teachers (Name, Salary, Surname) values ('Consalve', 89, 'Alvarez');
-insert into Teachers (Name, Salary, Surname) values ('Elena', 70, 'Verne');
-insert into Teachers (Name, Salary, Surname) values ('Ivan', 32, 'Granleese');
-go
+insert into Positions
+values ('Barber'),
+       ('Barber-Apprentice'),
+	   ('Chief-Barber'),
+	   ('Cutter'),
+	   ('Junior-Barber'),
+	   ('Stylist'),
+	   ('Barber-Instructor'),
+	   ('Shop Operator')
 
-insert into Faculties (financing, name) values ('$1119.03', 'Dabtype');
-insert into Faculties (financing, name) values ('$2948.43', 'Yata');
-insert into Faculties (financing, name) values ('$2467.04', 'Chatterpoint');
-insert into Faculties (financing, name) values ('$9065.71', 'Yotz');
-insert into Faculties (financing, name) values ('$3924.59', 'Rhynoodle');
-insert into Faculties (financing, name) values ('$7752.62', 'Jabberstorm');
-insert into Faculties (financing, name) values ('$2614.03', 'Voolia');
-insert into Faculties (financing, name) values ('$5938.83', 'Yombu');
-insert into Faculties (financing, name) values ('$1916.48', 'Tagtune');
-insert into Faculties (financing, name) values ('$8698.44', 'Wikido');
-go
+insert into Reviews
+values ('Ok'),
+       ('Good'),
+	   ('Amazing'),
+	   ('Bad'),
+	   ('Awful')
 
-insert into Curators (Name, Surname) values ('Liam', 'Vankov');
-insert into Curators (Name, Surname) values ('Olivia', 'Del Checolo');
-insert into Curators (Name, Surname) values ('Oliver', 'Gane');
-insert into Curators (Name, Surname) values ('Alma', 'Tarplee');
-insert into Curators (Name, Surname) values ('Ollie', 'Oakey');
-insert into Curators (Name, Surname) values ('Irv', 'Halfhyde');
-insert into Curators (Name, Surname) values ('Lettie', 'Andrieux');
-go
+insert into Customers
+values ('Adam', 'Simons', '555-2236', 'kbmt@mail.com', 1),
+       ('Marta', 'Tim', '555-7630', 'fkrvt@mail.com', 3),
+	   ('Joseph', 'Joestar', '555-3696', 'jojo@mail.com', 2),
+	   ('Phill', 'Ricks', '555-4472', 'bmb@mail.com', 3),
+	   ('Nicolas', 'Browney', '555-3765', 'n2jhj@mail.com', 1),
+	   ('William', 'Black', '555-6377', 'vmvdg6@mail.com', 2),
+	   ('Pit', 'Stewart', '555-5931', '2jiiil@mail.com', 1)
 
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('ShopRite Day Calm', 8, 12);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('NuLev', 7, 11);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Levothyroxine Sodium', 10, 2);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Pure petroleum', 6, 14);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Alba Botanica Natural Even Advanced Sea Moss Moisturizer SPF15', 10, 12);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Hydrocortisone', 9, 12);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Venlafaxine Hydrochloride', 3, 8);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Carbidopa and Levodopa', 1, 2);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Secret Clinical Invisible', 4, 4);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Docetaxel', 9, 7);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Potassium Chloride', 4, 4);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('ziprasidone hydrochloride', 4, 12);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Venlafaxine Hydrochloride', 1, 1);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Pleo Lat', 1, 12);
-insert into Lectures (LectureRoom, SubjectId, TeacherId) values ('Nystatin', 2, 10);
-go
+insert into Barbers
+values ('Smith', 'Poll', 'Male', '555-2236', 'kbmt@mail.com', '1989-05-10', '2010-05-14', 1),
+       ('Bob', 'Ronald', 'Male', '555-8431', 'tngotv@mail.com', '1988-01-09', '2011-10-18', 2),
+	   ('Rendolf', 'Dim', 'Male', '555-4056', 'nknkn5@mail.com', '1999-06-20', '2017-02-17', 1),
+	   ('Jessica', 'Poll', 'Female', '555-3076', 'kdvd@mail.com', '1989-07-10', '2020-05-14', 5),
+	   ('Timothy', 'Wins', 'Male', '555-2566', '669gbmt@mail.com', '1978-05-10', '2019-12-12', 4)
 
-insert into Departments
-values (8000, 'Graphic Design', 1),
-       (6200, 'Software Development', 2),
-	   (7800, 'Testing', 2),
-	   (9900, 'Cybersecurity', 3),
-	   (7500, 'Visual Design', 1),
-	   (7100, 'Systems Engeneering', 4),
-	   (8600, 'Network Engeneering', 4),
-	   (9500, 'Web Developing', 1),
-	   (6300, 'Database Administration', 3),
-	   (8500, 'Computer Architecture', 5),
-	   (8000, 'Computer Support', 5),
-	   (7400, 'Project Management', 6),
-	   (6900, 'Information Security', 6),
-	   (5800, 'Data Management', 6)
-go
+insert into Schedule
+values (2, 5, '11:12:02', '11:38:02'),
+       (1, 3, '18:30:02', '18:56:07'),
+	   (1, 2, '16:23:57', '17:05:19'),
+	   (3, 5, '09:17:22', '09:56:00'),
+	   (4, 3, '13:29:21', '13:58:07'),
+	   (5, 1, '17:00:57', '17:23:14'),
+	   (2, 4, '11:30:02', '11:56:07')
 
-insert into Groups (Name, Year, DepartmentId) values ('SPD-115', 4, 12);
-insert into Groups (Name, Year, DepartmentId) values ('SBU-331', 3, 14);
-insert into Groups (Name, Year, DepartmentId) values ('SPU-123', 4, 1);
-insert into Groups (Name, Year, DepartmentId) values ('PV-125', 5, 4);
-insert into Groups (Name, Year, DepartmentId) values ('PD-221', 1, 6);
-insert into Groups (Name, Year, DepartmentId) values ('VPD-121', 2, 1);
-insert into Groups (Name, Year, DepartmentId) values ('SPU-013', 1, 8);
-insert into Groups (Name, Year, DepartmentId) values ('VPD-011', 5, 14);
-insert into Groups (Name, Year, DepartmentId) values ('PD-014', 4, 6);
-insert into Groups (Name, Year, DepartmentId) values ('KI-21', 1, 5);
-insert into Groups (Name, Year, DepartmentId) values ('QA-25', 2, 9);
-insert into Groups (Name, Year, DepartmentId) values ('QA-22', 3, 4);
-insert into Groups (Name, Year, DepartmentId) values ('KFA-212', 2, 7);
-insert into Groups (Name, Year, DepartmentId) values ('LCA-117', 4, 8);
-insert into Groups (Name, Year, DepartmentId) values ('SAP-567', 4, 3);
-insert into Groups (Name, Year, DepartmentId) values ('USP-007', 4, 5);
-insert into Groups (Name, Year, DepartmentId) values ('ROI-097', 5, 9);
-insert into Groups (Name, Year, DepartmentId) values ('BU-228', 2, 2);
-insert into Groups (Name, Year, DepartmentId) values ('JEI-113', 3, 5);
-insert into Groups (Name, Year, DepartmentId) values ('KOI-232', 4, 7);
-go
+insert into Feedbacks
+values ('Great service!', 2, 3),
+       ('Was satisfied with eerything.', 1, 3),
+	   ('Will recommend to my family.', 3, 1),
+	   ('Nice!', 4, 5),
+	   ('First and last time here...', 5, 4),
+	   ('Prices are too high.', 6, 2)
 
-insert into GroupsLectures (GroupId, LectureId) values (5, 15);
-insert into GroupsLectures (GroupId, LectureId) values (16, 13);
-insert into GroupsLectures (GroupId, LectureId) values (17, 15);
-insert into GroupsLectures (GroupId, LectureId) values (9, 14);
-insert into GroupsLectures (GroupId, LectureId) values (19, 13);
-insert into GroupsLectures (GroupId, LectureId) values (9, 12);
-insert into GroupsLectures (GroupId, LectureId) values (19, 12);
-insert into GroupsLectures (GroupId, LectureId) values (3, 14);
-insert into GroupsLectures (GroupId, LectureId) values (15, 8);
-insert into GroupsLectures (GroupId, LectureId) values (17, 15);
-insert into GroupsLectures (GroupId, LectureId) values (5, 13);
-insert into GroupsLectures (GroupId, LectureId) values (5, 1);
-insert into GroupsLectures (GroupId, LectureId) values (2, 4);
-insert into GroupsLectures (GroupId, LectureId) values (16, 1);
-insert into GroupsLectures (GroupId, LectureId) values (11, 10);
-insert into GroupsLectures (GroupId, LectureId) values (9, 10);
-insert into GroupsLectures (GroupId, LectureId) values (7, 2);
-insert into GroupsLectures (GroupId, LectureId) values (18, 11);
-insert into GroupsLectures (GroupId, LectureId) values (13, 1);
-insert into GroupsLectures (GroupId, LectureId) values (19, 7);
-go
-
-insert into GroupsCurators
-values (1, 3),
-       (4, 5),
-	   (3, 4),
-	   (5, 8),
-	   (2, 2),
-	   (6, 7),
-	   (7, 1),
-	   (1, 9),
-	   (7, 6),
-	   (3, 10),
-	   (7, 13),
-	   (2, 18),
-	   (1, 14),
-	   (3, 19),
-	   (2, 11)
-go
+insert into Visits
+values (2, 3, 6, '2022-01-14', 30, 1, 3),
+       (3, 1, 5, '2022-01-22', 20, 2, 3),
+	   (1, 4, 2, '2022-02-07', 19, 4, 2),
+	   (2, 5, 1, '2022-02-20', 22, 3, 1),
+	   (5, 2, 3, '2022-03-06', 30, 2, 3),
+	   (1, 2, 2, '2022-03-28', 12, 1, 4)
